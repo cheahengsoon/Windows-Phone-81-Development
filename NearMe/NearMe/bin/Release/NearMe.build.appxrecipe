@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>ASUS-PC</Machine>
+    <WindowsUser>Thong Duy Nguyen</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>9b974531-b641-431b-a196-74f9fa25d1df</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\obj\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\bin\Release\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\bin\Release\NearMe.exe">
+      <PackagePath>NearMe.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\BadgeLogo.scale-240.png">
+      <PackagePath>Assets\BadgeLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\checkin.png">
+      <PackagePath>Assets\checkin.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\direction.png">
+      <PackagePath>Assets\direction.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\heart.png">
+      <PackagePath>Assets\heart.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\Logo.scale-240.png">
+      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\location_icon.png">
+      <PackagePath>Assets\location_icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\pushpin.png">
+      <PackagePath>Assets\pushpin.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\setting.png">
+      <PackagePath>Assets\setting.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\SmallLogo.scale-240.png">
+      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\SplashScreen.scale-240.png">
+      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\Square71x71Logo.scale-240.png">
+      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\StoreLogo.scale-240.png">
+      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\Assets\WideLogo.scale-240.png">
+      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\bin\Release\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\bin\Release\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\bin\Release\VenueDetailPage.xbf">
+      <PackagePath>VenueDetailPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\bin\Release\NearMe.xr.xml">
+      <PackagePath>NearMe.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\MinhHieu\Dropbox\VNG Mobile Dev Fresher\NearMe\NearMe\NearMe\bin\Release\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

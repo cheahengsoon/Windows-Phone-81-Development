@@ -1,0 +1,119 @@
+﻿<Page
+    x:Class="NearMe.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NearMe"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    xmlns:common="clr-namespace:Personal_Notes_Management_System"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    Background="#FF00B9FF">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Name="gridLoading" Visibility="Collapsed" Canvas.ZIndex="1"  Margin="0,23,0,0" Grid.RowSpan="3" Background="#FFDAD2D2" Tapped="gridLoading_Tapped">
+            <TextBlock Name="statusText" TextAlignment="Center" Text="Đang xác định vị trí của bạn..." Foreground="Black" FontSize="18" Margin="0,301,0,285"/>
+        </Grid>
+        <TextBlock Grid.Row="0" Text="Tìm quanh đây" FontSize="20" Foreground="White" FontFamily="Arial" TextAlignment="Center"/>
+        <Grid Visibility="Visible" Grid.Row="1" Height="Auto" Background="#FFF0F0F0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Tìm theo:" Foreground="#FF727272" FontFamily="Arial" FontSize="18" TextAlignment="Center" Padding="0,9,0,0"/>
+            <TextBlock Grid.Column="2" Text="{Binding Query}" Foreground="#FF00B9FF" FontFamily="Arial" FontSize="18" TextAlignment="Left" Padding="0,9,0,0" TextWrapping="Wrap"/>
+            <Image Grid.Column="3" Width="30" Height="40" Source="Assets/setting.png" Tapped="Image_Tapped"></Image>
+        </Grid>
+        <Grid x:Name="ContentPanel" Grid.Row="2" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer Name="scrViewr" Grid.Row="0" ViewChanged="ScrollViewer_ViewChanged" ViewChanging="scrViewr_ViewChanging">
+                <ListBox Canvas.ZIndex="1" Name="lstBox" Tapped="lstBox_Tapped">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Grid.Row="0" HorizontalAlignment="Stretch" Height="60" Width="390">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Grid.Column="0" Width="60" Height="60">
+                                    <Ellipse.Fill>
+                                        <ImageBrush Stretch="Fill" ImageSource="{Binding categories[0].icon.url}"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="2"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="{Binding name}" Foreground="Black" FontFamily="Arial" FontSize="20"/>
+                                    <Grid Grid.Row="1" Height="30">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Height="13" Width="13" Source="Assets/location_icon.png"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding location.distance}" Foreground="#FF8B8585" FontSize="15" TextAlignment="Center" Padding="0,4,0,0"/>
+                                        <TextBlock Grid.Column="3" Text=" m" Foreground="#FF8B8585" FontSize="15" Padding="0,4,0,0"/>
+                                    </Grid>
+                                    <Rectangle Grid.Row="2" Fill="#FFF0F0F0" Height="2"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+            <Grid Name="gridBlur" Grid.Row="0" Background="Black" Opacity="0.4" Tapped="gridBlur_Tapped"/>
+            <Grid Name="gridMenuCategory" Grid.Row="0" Margin="168,0,0,168.667" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Background="#FF00B9FF">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" Text="Bán kính (m):" Foreground="White" FontSize="18"/>
+                    <TextBox Name="txtRadius" InputScope="NumberFullWidth" Grid.Column="3" FontSize="18" Text="{Binding Radius}" Background="White" Foreground="#FF00B9FF"/>
+                </Grid>
+                <ListBox Grid.Row="1" Name="lstBoxCategories" ItemsSource="{Binding Categories}" Height="282" Margin="0,0,-0.333,0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Foreground="#FF00B9FF" Text="{Binding name}" FontSize="20" SelectionHighlightColor="#FF8F9597" TextWrapping="Wrap" FontFamily="Arial"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Grid.Row="2" Background="#FF00B9FF" BorderBrush="#FF00B9FF" BorderThickness="2.5" Content="Lưu" Margin="0,21,-0.333,0" Width="232" Click="Button_Click"></Button>
+            </Grid>
+            <Grid Grid.Row="1" Background="#FF00B9FF">
+                <TextBlock Name="txtLoading" Visibility="Collapsed" Grid.Row="1" Text="Đang tải..." TextAlignment="Center" Foreground="White" FontFamily="Arial" FontSize="16"/>
+            </Grid>
+        </Grid>
+        <Ellipse Visibility="Collapsed" Name="gotoTop" Canvas.ZIndex="1" Margin="335,465.667,10,56" Grid.Row="2" Tapped="Ellipse_Tapped" Opacity="0.5">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="ms-appx:/Assets/direction.png" Stretch="Fill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+    </Grid>
+</Page>

@@ -1,0 +1,78 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NearMe"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    xmlns:common="clr-namespace:Personal_Notes_Management_System"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    x:Class="NearMe.VenueDetailPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    Background="#FF00B9FF">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="gridLoading" Visibility="Collapsed" Canvas.ZIndex="1"  Margin="0,23,0,0" Grid.RowSpan="3" Background="#FFDAD2D2">
+            <TextBlock x:Name="txtStatus" TextAlignment="Center" Text="Đang tải..." Foreground="Black" FontSize="18" Margin="0,301,0,285"/>
+        </Grid>
+        <TextBlock x:Name="txtVenueName" Grid.Row="0" Text="{Binding iVenue.name}" FontSize="20" Foreground="White" FontFamily="Arial" TextAlignment="Center"/>
+        <Grid Grid.Row="1" Height="40" Background="#FFF0F0F0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Height="25" Width="25" Source="Assets/heart.png" ToolTipService.ToolTip="like"/>
+            <TextBlock Grid.Column="3" Text="{Binding iVenue.likes.count}" Foreground="#FF00B9FF" FontSize="18" Padding="0,7,0,0" ToolTipService.ToolTip="like"/>
+            <TextBlock Name="txtLike" Grid.Column="4" Text=" likes" Foreground="#FF00B9FF" FontSize="18" Padding="0,7,0,0" ToolTipService.ToolTip="like"/>
+            <Image Grid.Column="6" Height="30" Width="30" Source="Assets/checkin.png" ToolTipService.ToolTip="check in"/>
+            <TextBlock Grid.Column="8" Text="{Binding iVenue.stats.checkinsCount}" Foreground="#FF00B9FF" FontSize="18" Padding="0,7,0,0" ToolTipService.ToolTip="check in"/>
+            <TextBlock Name="txtCheckin" Grid.Column="9" Text=" checkins" Foreground="#FF00B9FF" FontSize="18" Padding="0,7,0,0" ToolTipService.ToolTip="like"/>
+        </Grid>
+        <StackPanel Grid.Row="2" x:Name="ContentPanel" Background="White" Width="400">
+            <StackPanel Visibility="Visible">
+                <TextBlock Text="Địa chỉ »" Foreground="#FF00B9FF" FontSize="18" Padding="10,0,0,0" FontWeight="Bold"/>
+                <Rectangle Fill="#FF00B9FF" Height="2"/>
+                <TextBlock Text="{Binding iVenue.location.address}" Foreground="#FF939697" FontSize="17" Padding="10,0,0,0" TextWrapping="Wrap"/>
+                <Maps:MapControl Name="map" Height="320" MapServiceToken="abcdef-abcdefghijklmno"/>
+                <Rectangle  Fill="#FF939697" Height="2"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Loại »" Foreground="#FF00B9FF" FontSize="18" Padding="10,0,0,0" FontWeight="Bold"/>
+                <Rectangle Fill="#FF00B9FF" Height="2"/>
+                <TextBlock Text="{Binding iVenue.category}" Foreground="#FF939697" FontSize="17" Padding="10,0,0,0" TextWrapping="Wrap"/>
+                <Rectangle Fill="#FF939697" Height="2"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Liên hệ »" Foreground="#FF00B9FF" FontSize="18" Padding="10,0,0,0" FontWeight="Bold"/>
+                <Rectangle Fill="#FF00B9FF" Height="2"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="● Điện thoại liên hệ: " Foreground="#FF939697" FontSize="17" Padding="10,0,0,0" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding iVenue.contact.formattedPhone}" Foreground="#FF939697" FontSize="17" Padding="10,0,0,0" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="● Trang web: " Foreground="#FF939697" FontSize="17" Padding="10,0,0,0" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding iVenue.url}" Foreground="#FF939697" FontSize="17" Padding="10,0,0,0" TextWrapping="Wrap"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
