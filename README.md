@@ -21,4 +21,5 @@ hạn, vì thế giải quyết vấn đề này là hết sức cần thiết, 
     của giải pháp này.
 - Test ứng dụng:
   + Ứng dụng được test trên áy ảo và máy thật, sử dụng cả wifi và 3G.
-  + Kết quả cho thấy, 
+  + Kết quả cho thấy, cho dù dùng wifi hay 3G, mạng nhanh hay yếu đều có thể tải được dữ liệu từ server, tốc độ nhanh chậm 
+  có thay đổi phụ thuộc vào tốc độ mạng.
