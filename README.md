@@ -1,4 +1,4 @@
-# Windows-Phone-8-Development
+# Windows-Phone-81-Development
 # NearMe - Ứng dụng đơn giản cho phép tìm kiếm các địa điểm xung quanh vị trí của mình trong một vùng nhất định
 - Cài đặt: do lượng dữ liệu từ server chuyển về là rất lớn cho mỗi lần yêu cầu, trong khi bộ nhớ của điện thoại thì có giới 
 hạn, vì thế giải quyết vấn đề này là hết sức cần thiết, bên cạnh đó vấn đề tiết kiệm băng thông cũng cần được lưu ý.
